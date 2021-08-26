@@ -1,0 +1,47 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.svm.lrp.sfm.nmr.model;
+
+import com.svm.lrp.nfr.query.annotation.FP;
+import com.svm.lrp.nfr.query.annotation.VDS;
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ *
+ * @author kuppuswamy.annadurai
+ */
+public interface Icharge {
+
+    @VDS(name = "getnmrcharge",tenant="svm")
+
+    public VDSCountryModel getCharge();
+
+    @VDS(name = "getnklcharge",tenant="svm")
+
+    public VDSCountryModel getCharge(@FP(name = "id") String id);
+
+    @VDS(name = "getnklcharge",tenant="svm")
+
+    public VDSCountryModel getChargetitle(@FP(name = "title") String title);
+    
+    
+    @VDS(name = "setnklcharge",tenant="svm")
+
+    public Map setCharge(VDSCountryModel charge);
+    
+    @VDS(name = "putnklcharge",tenant="svm")
+    
+    public Map updateCharge(VDSCountryModel charge);
+    
+    @VDS(name = "removenklcharge",tenant="svm")
+    
+    public Map deleteCharge(VDSCountryModel charge);
+
+    //public boolean deleteCharge(HashMap hm);
+
+}

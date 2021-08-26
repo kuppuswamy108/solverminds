@@ -1,0 +1,88 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.svm.lrp.sfm.nmr.model;
+
+
+import java.io.Serializable;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+public class Chargedetailreport1 implements Serializable{
+
+	@SerializedName("duration")
+	@Expose
+	private int duration;
+
+	@SerializedName("internal")
+	@Expose
+	private String internal;
+
+	@SerializedName("calender")
+	@Expose
+	private String calender;
+
+	@SerializedName("instructor")
+	@Expose
+	private String instructor;
+
+	@SerializedName("location")
+	@Expose
+	private String location;
+
+	@SerializedName("title")
+	@Expose
+	private String title;
+
+	@SerializedName("status")
+	@Expose
+	private String status;
+
+
+	public int getDuration() {
+		return duration;
+	}
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+	public String getInternal() {
+		return internal;
+	}
+	public void setInternal(String internal) {
+		this.internal = internal;
+	}
+	public String getCalender() {
+		return calender;
+	}
+	public void setCalender(String calender) {
+		this.calender = calender;
+	}
+	public String getInstructor() {
+		return instructor;
+	}
+	public void setInstructor(String instructor) {
+		this.instructor = instructor;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+}
+

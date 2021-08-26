@@ -1,0 +1,33 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.svm.lrp.sfm.nmr.model;
+
+/**
+ *
+ * @author kuppuswamy.annadurai
+ */
+import java.util.ArrayList;
+import java.util.List;
+import java.io.Serializable;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+public class VDSCountryModel implements Serializable{
+
+	
+	@SerializedName("chargedetailreport1")
+	@Expose
+	private List<Chargedetailreport1> chargedetailreport1 = new ArrayList<Chargedetailreport1>();
+
+
+	public List<Chargedetailreport1> getChargedetailreport1() {
+		return chargedetailreport1;
+	}
+	public void setChargedetailreport1(List<Chargedetailreport1> chargedetailreport1) {
+		this.chargedetailreport1 = chargedetailreport1;
+	}
+
+}

@@ -1,0 +1,201 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.svm.lrp.sfm.nmr.model;
+
+import com.svm.nfr.component.datatable.DefaultColumnModel;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+/**
+ *
+ * @author kuppuswamy.annadurai
+ */
+public class NMRUIDataModel implements Serializable {
+
+    private String countrycode;
+    private String countryname;
+  
+    private String coursetitle;
+    private Date date;
+    private String description;
+    private String internal;
+    private String external;
+    private String instructor;
+    private int duration;
+    private int totalcost = 10000;
+    private int participants = 1;
+    private String location;
+    private String status;
+    ArrayList<Chargedetailreport1> countrylist = new ArrayList();
+    List columnModelList;
+    List<Chargedetailreport1> selgridlist;
+    ArrayList<Chargedetailreport1> selectedGridAgencyList = new ArrayList<>();
+  // ArrayList<Chargedetailreport> selGridList = new ArrayList();
+
+    public ArrayList<Chargedetailreport1> getSelectedGridAgencyList() {
+        return selectedGridAgencyList;
+    }
+
+    public void setSelectedGridAgencyList(ArrayList<Chargedetailreport1> selectedGridAgencyList) {
+        this.selectedGridAgencyList = selectedGridAgencyList;
+    }
+
+    
+
+    public List getSelgridlist() {
+        return selgridlist;
+    }
+
+    public void setSelgridlist(List selgridlist) {
+        this.selgridlist = selgridlist;
+    }
+
+    /*public ArrayList<countryModel> getSelGridList() {
+        return selGridList;
+    }
+
+    public void setSelGridList(ArrayList<countryModel> selGridList) {
+        this.selGridList = selGridList;
+    }*/
+
+    public List getColumnModelList() {
+        return columnModelList;
+    }
+
+    public void setColumnModelList(List columnModelList) {
+        this.columnModelList = columnModelList;
+    }
+
+   
+
+    
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+    int c;
+
+    public void setC(int c) {
+        this.c = c;
+    }
+    public int getC() {
+        return  ((int) (totalcost/participants));
+    }
+
+    public int getParticipants() {
+        return participants;
+    }
+
+    public void setParticipants(int participants) {
+        this.participants = participants;
+    }
+
+    public int getTotalcost() {
+        return totalcost;
+    }
+
+    public void setTotalcost(int totalcost) {
+        this.totalcost = totalcost;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public String getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(String instructor) {
+        this.instructor = instructor;
+    }
+
+    public String getExternal() {
+        return external;
+    }
+
+    public void setExternal(String external) {
+        this.external = external;
+    }
+
+    public String getInternal() {
+        return internal;
+    }
+
+    public void setInternal(String internal) {
+        this.internal = internal;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getCoursetitle() {
+        return coursetitle;
+    }
+
+    public void setCoursetitle(String coursetitle) {
+        this.coursetitle = coursetitle;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getCountrycode() {
+        return countrycode;
+    }
+
+    public void setCountrycode(String countrycode) {
+        this.countrycode = countrycode;
+    }
+
+    public String getCountryname() {
+        return countryname;
+    }
+
+    public void setCountryname(String countryname) {
+        this.countryname = countryname;
+    }
+
+    public ArrayList<Chargedetailreport1> getCountrylist() {
+        return (ArrayList<Chargedetailreport1>) countrylist;
+    }
+
+    public void setCountrylist(ArrayList<Chargedetailreport1> countrylist) {
+        this.countrylist = countrylist;
+    }
+
+   
+   
+
+}

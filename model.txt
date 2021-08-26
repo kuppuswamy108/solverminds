@@ -1,0 +1,47 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.svm.lrp.sfm.nmr.model;
+
+import java.io.Serializable;
+
+/**
+ *
+ * @author kuppuswamy.annadurai
+ */
+public class NMRModel implements Serializable  {
+    NMRUIDataModel datamodel;
+     NMRUIStateModel statemodel;
+
+     public NMRModel()
+     {
+         datamodel=new NMRUIDataModel();
+         statemodel=new NMRUIStateModel();
+         
+         
+     }
+     
+     
+     
+    public NMRUIDataModel getDatamodel() {
+        return datamodel;
+    }
+
+    public void setDatamodel(NMRUIDataModel datamodel) {
+        this.datamodel = datamodel;
+    }
+
+    public NMRUIStateModel getStatemodel() {
+        return statemodel;
+    }
+
+    public void setStatemodel(NMRUIStateModel statemodel) {
+        this.statemodel = statemodel;
+    }
+     
+     
+     
+    
+}

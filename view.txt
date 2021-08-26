@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:svm="http://java.sun.com/jsf/composite/svm">
+    <h:head>
+        <title>login</title>
+    </h:head>
+    <h:body>
+        <h:form id="NKL"> 
+            <p:row>
+                <p:column>
+                    <svm:ToolBar 
+                        id="tb1" 
+                        objref="#{nmrCBean.object}" 
+                        formid="NKL" 
+                        update="NKL" 
+                        updatesearch="NKL" 
+                        toolbar="#{nmrCBean.toolBarBean}" />
+
+                </p:column> 
+            </p:row>
+
+            <p:column>
+                <p:outputLabel value="Title"/>
+            </p:column>
+
+            <p:spacer width="75" height="10"/>
+
+            <p:column>
+                <p:inputText 
+                    id="title"
+                    value="#{nmrCBean.model.datamodel.coursetitle}"
+                    style="width:205px"
+                    placeholder="CourseTitle"
+                    required="true"
+                    requiredMessage="need coursetitle">
+
+                    <f:validateRegex pattern="[a-zA-Z]+"/>
+
+                </p:inputText>
+            </p:column>
+
+            <p:spacer width="75" height="10"/> 
+
+            <p:column>
+                <p:outputLabel for="NKL_lbl2blnumberss" />
+
+            </p:column>
+
+            <p:column>
+                <p:calendar id="NKL_lbl2blnumberss"
+                            value="#{nmrCBean.model.datamodel.date}" 
+                            showOn="button"
+                            placeholder="course date range"/>
+            </p:column><br/><br/>
+            <p:outputLabel id="BDI_lblremarks" 
+                           styleClass="sm-label-top sm-margin-right5" 
+                           value="Description" 
+                           rendered ="true"/>
+
+            <p:spacer width="30" height="10"/>
+            <p:column>
+
+                <textarea id="description" 
+                          value="#{nmrCBean.model.datamodel.description}"      
+                          name="description" 
+                          cols="100" 
+                          rows="5" 
+                          placeholder="enter the description">
+
+                </textarea> 
+            </p:column><br/><br/>
+
+
+
+            <p:column>
+                <p:outputLabel value="instructortype" />
+
+            </p:column>
+
+            <p:spacer width="30" height="10"/>
+
+
+            <p:outputLabel for="@next" value="internal"/>
+            <p:spacer width="30" height="10"/>
+            <p:selectOneMenu id="internal" value="#{nmrCBean.model.datamodel.internal}">
+                <f:selectItem itemLabel="Select One" itemValue=""/>
+                <f:selectItem itemLabel="kuppu" itemValue="kuppu"/>
+                <f:selectItem itemLabel="priya" itemValue="priya"/>
+                <f:selectItem itemLabel="latha" itemValue="latha"/>
+                <f:selectItem itemLabel="manoj" itemValue="manoj"/>
+                <f:selectItem itemLabel="divya" itemValue="divya"/>
+                <f:selectItem itemLabel="vasu" itemValue="vasu"/>
+                <f:selectItem itemLabel="keerthi" itemValue="keerthi"/>
+                <f:selectItem itemLabel="siva" itemValue="siva"/>
+                <f:selectItem itemLabel="ashok" itemValue="ashok"/>
+                <f:selectItem itemLabel="kannan" itemValue="kannan"/>
+
+                <f:facet name="footer">
+                    <h:outputText value="3 options" style="font-weight:bold;"/>
+                </f:facet>
+            </p:selectOneMenu>
+
+            <p:spacer width="113" height="10"/> 
+            <p:column>
+                <p:outputLabel value="external" />
+
+            </p:column>
+            <p:spacer width="50" height="10"/>
+            <p:inputText 
+                value="#{nmrCBean.model.datamodel.external}" 
+                required="true" 
+                requiredMessage="external required">
+                <f:validateRegex pattern="[a-zA-Z]+"/>
+
+            </p:inputText>
+
+            <p:spacer width="30" height="30"/>
+            <p:column>
+                <p:outputLabel value="Instructor" />
+
+            </p:column>
+            <p:spacer width="30" height="10"/>
+
+            <p:inputText  
+                id="instructor"
+                value="#{nmrCBean.model.datamodel.instructor}"
+                placeholder="instructor">
+                <f:validateRegex pattern="[a-zA-Z]+"/>
+            </p:inputText><br/><br/>
+
+            <p:column>
+                <p:outputLabel value="Duration" />
+
+            </p:column>
+
+            <p:spacer width="65" height="10"/>
+            <p:inputText id="duration" value="#{nmrCBean.model.datamodel.duration}" 
+                         style="width:205px" 
+                         placeholder="duration" 
+                         styleClass="p-d-block">
+
+            </p:inputText>
+
+            <p:spacer width="75" height="10"/> 
+
+            <p:column>
+                <p:outputLabel value="totalcost" />
+
+            </p:column>
+
+            <p:spacer width="50" height="10"/> 
+
+            <p:inputText value="#{nmrCBean.model.datamodel.totalcost}">
+
+
+            </p:inputText><br/><br/>
+            <p:column>
+                <p:outputLabel value="# 
+                               of participants" />
+
+            </p:column>
+
+            <p:spacer width="26" height="10"/>
+
+
+
+
+            <p:spinner min="1" value="#{nmrCBean.model.datamodel.participants}">
+
+                <p:ajax  update="c" />
+            </p:spinner>
+
+            <p:spacer width="75" height="10"/> 
+
+
+
+            <p:outputLabel value="cost per person"/><p:spacer width="30" height="10"/><p:spacer width="30" height="10"/> 
+            <h:outputText value="#{nmrCBean.model.datamodel.c} " id="c"></h:outputText><br/><br/>
+            <br/>
+
+
+            <div style="margin: 0; display: inline-block;">
+
+                <p:outputLabel value="Location" />
+                <p:spacer width="50" height="10"/> 
+                <div style="margin: 0; display: inline-block;">
+                    <p:selectOneRadio id="location" value="#{nmrCBean.model.datamodel.location}" >
+                        <f:selectItem itemLabel="SVM" itemValue="Teams"/>
+                        <f:selectItem itemLabel="Online Session" itemValue="Online Session"/>
+
+                    </p:selectOneRadio>
+                </div>
+
+            </div>
+            <p:spacer width="95" height="10"/> 
+            <div style="margin: 0; display: inline-block;">
+                <p:outputLabel for="@next" value="status"/>
+                <p:spacer width="60" height="10"/> 
+                <p:selectOneMenu id="status" value="#{nmrCBean.model.datamodel.status}">
+                    <f:selectItem itemLabel="planned" itemValue="palnned"/>
+                    <f:selectItem itemLabel="progress" itemValue="progress"/>
+                    <f:selectItem itemLabel="completed" itemValue="completed"/>
+                    <f:facet name="footer">
+                        <h:outputText value="3 options" style="font-weight:bold;"/>
+                    </f:facet>
+                </p:selectOneMenu>
+
+            </div>
+
+
+            <p:dataTable 
+                id="NKL_datatable"
+                editable="true"
+                value="#{nmrCBean.model.datamodel.countrylist}" 
+                var="countryModel"
+                rowKey="#{countryModel}"
+                selection="#{nmrCBean.model.datamodel.selectedGridAgencyList}"
+                selectionMode="multiple">
+
+
+
+                <p:ajax event="rowDblselect" listener="#{nmrCBean.ctrl.doubleclickAction}" />
+                
+                <p:column headerText="course title"> #{countryModel.title}</p:column>
+                <p:column headerText="internal"> #{countryModel.internal}</p:column>
+                <p:column headerText="insructor"> #{countryModel.instructor}</p:column>
+                <p:column headerText="duration"> #{countryModel.duration}</p:column>
+                <p:column headerText="location"> #{countryModel.location}</p:column>
+                <p:column headerText="status"> #{countryModel.status}</p:column>
+
+
+
+            </p:dataTable>
+
+
+
+
+
+
+            <br/><br/>
+        </h:form>
+    </h:body>
+</ui:composition>
+

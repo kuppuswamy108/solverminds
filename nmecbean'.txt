@@ -1,0 +1,166 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.svm.lrp.sfm.nmrbean;
+
+import com.svm.jsf.nfr.module.RightsIntercptor;
+import com.svm.lrp.jsf.context.scope.LRPViewScope;
+import com.svm.lrp.nfr.jsf.utils.AbsToolBarUtils;
+import com.svm.lrp.nfr.jsf.utils.ILogger;
+import com.svm.lrp.nfr.jsf.utils.IToolBar;
+import com.svm.lrp.nfr.jsf.utils.SMDialogUtil;
+import com.svm.lrp.nfr.main.bean.ToolbarCBean;
+import com.svm.lrp.nfr.query.cbean.VDSInvoker;
+import com.svm.lrp.sfm.nmr.ctrl.NMRCtrl;
+import com.svm.lrp.sfm.nmr.model.NMRModel;
+import javax.annotation.PostConstruct;
+import javax.faces.event.ActionEvent;
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.interceptor.Interceptors;
+import org.primefaces.event.SelectEvent;
+
+/**
+ *
+ * @author kuppuswamy.annadurai
+ */
+@Named(value="nmrCBean")
+@LRPViewScope
+@Interceptors({RightsIntercptor.class})
+public class NMRCBean implements java.io.Serializable,IToolBar{
+    NMRModel model;
+    NMRCtrl ctrl;
+    
+   @Inject
+    ILogger logger;
+    
+    @Inject
+    ToolbarCBean toolbar;
+    
+    @Inject
+    VDSInvoker vds;
+    
+    SMDialogUtil dutil;
+    
+    @PostConstruct
+    public void init()
+    {
+        model=new  NMRModel ();
+        dutil=new SMDialogUtil();
+       ctrl=new NMRCtrl(logger,model,toolbar,dutil,vds); 
+       
+    }
+
+    public NMRModel getModel() {
+        return model;
+    }
+
+    public void setModel(NMRModel model) {
+        this.model = model;
+    }
+
+    public NMRCtrl getCtrl() {
+        return ctrl;
+    }
+
+    public void setCtrl(NMRCtrl ctrl) {
+        this.ctrl = ctrl;
+    }
+
+    public NMRCBean getObject(){
+        
+        return this;
+    }
+
+    
+    
+    
+    @Override
+    public boolean btnNewActionPerformed(ActionEvent ae) {
+        ctrl.btnNewActionperformed(ae);
+     return true;
+    }
+
+    @Override
+    public boolean btnSaveActionPerformed(ActionEvent ae) {
+        ctrl.btnSaveActionperformed();
+        return true;
+    }
+
+    @Override
+    public boolean btnEditActionPerformed(ActionEvent ae) {
+        ctrl.btnEditActionPerformed();
+        return true;
+    }
+
+    @Override
+    public boolean btnDeleteActionPerformed(ActionEvent ae) {
+        ctrl.btnDeleteActionPerformed();
+        return true;
+    }
+
+    @Override
+    public boolean btnCancelActionPerformed(ActionEvent ae) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean btnToolBarSearchActionPerformed(ActionEvent ae) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean btnSaveReturn(SelectEvent se) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean btnToolBarSearchReturn(SelectEvent se) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean btnSaveAsActionPerformed(ActionEvent ae) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean btnExportActionPerformed(ActionEvent ae) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean btnMoveLastActionPerformed(ActionEvent ae) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean btnMoveFirstActionPerformed(ActionEvent ae) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean btnForwardActionPerformed(ActionEvent ae) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean btnBackwardFirstActionPerformed(ActionEvent ae) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean btnPrintActionPerformed(ActionEvent ae) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public AbsToolBarUtils getToolBarBean() {
+        return toolbar;
+    }
+    
+    
+    
+}

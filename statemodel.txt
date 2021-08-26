@@ -1,0 +1,122 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.svm.lrp.sfm.nmr.model;
+
+import java.io.Serializable;
+
+/**
+ *
+ * @author kuppuswamy.annadurai
+ */
+public class NMRUIStateModel implements Serializable  {
+   
+     boolean title;
+     boolean calender;
+     boolean internal;
+     boolean external;
+     boolean instructor;
+     boolean duration;
+     boolean totalcost;
+     boolean participants;
+     boolean costperperson;
+     boolean location;
+     boolean status;
+
+    public boolean isTitle() {
+        return title;
+    }
+
+    public void setTitle(boolean title) {
+        this.title = title;
+    }
+
+    public boolean isCalender() {
+        return calender;
+    }
+
+    public void setCalender(boolean calender) {
+        this.calender = calender;
+    }
+
+    public boolean isInternal() {
+        return internal;
+    }
+
+    public void setInternal(boolean internal) {
+        this.internal = internal;
+    }
+
+    public boolean isExternal() {
+        return external;
+    }
+
+    public void setExternal(boolean external) {
+        this.external = external;
+    }
+
+    public boolean isInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(boolean instructor) {
+        this.instructor = instructor;
+    }
+
+    public boolean isDuration() {
+        return duration;
+    }
+
+    public void setDuration(boolean duration) {
+        this.duration = duration;
+    }
+
+    public boolean isTotalcost() {
+        return totalcost;
+    }
+
+    public void setTotalcost(boolean totalcost) {
+        this.totalcost = totalcost;
+    }
+
+    public boolean isParticipants() {
+        return participants;
+    }
+
+    public void setParticipants(boolean participants) {
+        this.participants = participants;
+    }
+
+    public boolean isCostperperson() {
+        return costperperson;
+    }
+
+    public void setCostperperson(boolean costperperson) {
+        this.costperperson = costperperson;
+    }
+
+    public boolean isLocation() {
+        return location;
+    }
+
+    public void setLocation(boolean location) {
+        this.location = location;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+     
+
+ 
+    
+    
+    
+    
+}
